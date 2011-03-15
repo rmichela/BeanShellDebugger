@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: ../bsh-2.0b4.jar
