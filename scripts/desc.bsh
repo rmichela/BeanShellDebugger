@@ -1,0 +1,11 @@
+// Describes the fields and current values of an object.
+
+import java.lang.reflect.*;
+
+public void desc(Object obj) {
+    for (Field field : obj.getClass().getDeclaredFields()) {
+        field.setAccessible(true); // if you want to modify private fields
+        print (field.getName() + " - " + 
+               field.get(obj));
+    }
+}

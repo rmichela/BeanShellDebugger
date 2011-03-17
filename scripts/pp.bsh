@@ -1,0 +1,11 @@
+//Prints a list of all loaded plugins
+
+import org.bukkit.plugin.*;
+
+public void pp() {
+    for(Plugin p : pluginManager.getPlugins()) {
+        String[] cn = p.getClass().getName().split("\\.");
+        print(cn[cn.length-1] + " - " +
+            (p.isEnabled() ? "enabled" : "disabled"));
+    }
+}

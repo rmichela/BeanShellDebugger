@@ -1,0 +1,6 @@
+//Gets a player by name
+import org.bukkit.entity.Player;
+
+public Player player(String name) {
+    return server.getPlayer(name);
+}
