@@ -34,16 +34,20 @@ public class BshdCommand implements CommandExecutor {
 			out.println(sb.toString());
 			
 			boolean more = true;
-			boolean first = true;
+			int ln = 0;
 			try {
 				while (more) {
 				    String line = in.readLine();
 				    if (line == null)
 				    	more = false;
-				    else if (first)
-				    	first = false;
-				    else
+				    else if (ln == 0) {
+				    	ln++;
+					} else if (ln == 1) {
+				    	sender.sendMessage(line.substring(6));
+				    	ln++;
+				    } else {
 				    	sender.sendMessage(line);
+				    }
 				 }
 			} catch (SocketTimeoutException e) {
 				
