@@ -21,6 +21,11 @@ public class BeanShellDebugger extends JavaPlugin {
 		log = getServer().getLogger();
 		log.info("[bshd] Starting BeanShell Debugger");
 		
+		// Initialize the data folder
+		if(!getDataFolder().exists()) {
+			getDataFolder().mkdir();
+		}
+		
 		bsh = new Interpreter();
 		try {
 			bsh.set("portnum", 1337);
